@@ -1,0 +1,118 @@
+@import '../../App.scss';
+
+
+	.modal__body {
+		z-index: 4;
+		min-height: 600px;
+		display: flex;
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		border: 1px solid $dark_gray;
+		& .body__preview {
+			background: $main_blue;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 60px;
+			height: 100%;
+			box-sizing: border-box;
+		}
+	
+		& .body__content {
+			background: $white;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			& .content__form {
+				padding: 39px 39px 38px 39px;
+
+				& .form__title {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 25px;
+					& .title__line {
+						width: 100%;
+						height: 1px;
+						background: $dark_gray;
+					}
+
+					& .title__text {
+						color: $dark_gray;
+						text-align: center;
+						margin: 0 15px;
+						width: 100%;
+						white-space: nowrap;
+						font-family: $open_sans;
+						font-style: italic;
+
+						font-size: 18px;
+						line-height: 25px;
+					}
+				}
+
+
+				& .checkbox__block {
+					margin: 27px auto 40px auto;
+					display: flex;
+					justify-content: center;
+
+				}
+
+
+
+
+				& .form__service-link {
+					cursor: pointer;
+					font-family: $open_sans;
+					font-size: 14px;
+					line-height: 19px;
+					color: $dark_gray;
+					padding-left: 5px;
+					padding-right: 5px;
+					padding-bottom: 2px;
+					border-bottom: 1px solid $dark_gray;
+					margin: 20px auto 0 auto;
+					display: flex;
+				}
+
+				& .form__buttons {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					& .form__service-link {
+						margin: 0 0 0 12px;
+					}
+				}
+
+			}
+			& .content__info {
+				border-top: 1px solid $dark_gray;
+				background: #F4F4F4;
+				padding: 36px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				& .info__contact-us {
+					display: flex;
+					align-items: center;
+					margin: 10px 0 20px 0;
+					& .contact-us__text {
+						margin-left: 5px;
+						color: $light_blue;
+						font-weight: bold;
+						font-size: 16px;
+						line-height: 22px;
+					}
+				}
+				& .info__socials {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					& .social__item {
+						margin: 0 7.5px;
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,83 @@
+@import '../App.scss';
+
+.custom-dropdown {
+    position: relative;
+    & .dropdown__active-element {
+        cursor: pointer;
+        width: 100%;
+        border: 2px solid $default_gray;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 10px 22px 10px 16px;
+        min-height: 52px;
+
+        & .active-element__value {
+            width: 100%;
+        }
+
+        & .active-element__buttons {
+           & .buttons__icon {
+               margin-left: 10px;
+               transition: .3s;
+               display: flex;
+
+               & svg path {
+                   fill: $default_black;
+               }
+
+                &.rotate {
+                   transform: rotate(180deg);
+                }
+           }
+
+        }
+    }
+
+    & .selector {
+        letter-spacing: 0.6px;
+    }
+
+    & .dropdown__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 18px;
+        width: 100%;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        background: $white;
+        & .selector {
+            color: $default_black;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px 18px 12px 22px;
+            box-sizing: border-box;
+            z-index: 5;
+            background: $white;
+            border-bottom: 1px solid $default_gray;
+
+            &.active {
+                background: rgba(196, 196, 196, 0.3);
+            }
+            &.disabled {
+                background: rgba(196, 196, 196, 0.45);
+                pointer-events: none;
+
+                & svg {
+                    display: none;
+                }
+
+            }
+            
+            & svg path {
+                fill: $default_black;
+                opacity: .5;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

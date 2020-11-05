@@ -1,0 +1,91 @@
+{
+  "name": "itmo-components-library",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.18.2"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dubsta-Bubsta/itmo-components-library.git"
+  },
+  "bug": {
+    "url": "https://github.com/Dubsta-Bubsta/itmo-components-library/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "author": "dubsta-bubsta",
+  "module": "dist/itmo-components.esm.js",
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@material-ui/core": "^4.11.0",
+    "@rollup/plugin-image": "^2.0.5",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-docs": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/addons": "^6.0.28",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.0.28",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "babel-loader": "^8.1.0",
+    "clsx": "^1.1.1",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "husky": "^4.2.5",
+    "react": "^16.13.1",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "rollup-plugin-sass": "^1.2.2",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.5",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^7.0.5",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {},
+  "description": "# Installation",
+  "bugs": {
+    "url": "https://github.com/Dubsta-Bubsta/itmo-components-library/issues"
+  },
+  "homepage": "https://github.com/Dubsta-Bubsta/itmo-components-library#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "components"
+  ]
+}

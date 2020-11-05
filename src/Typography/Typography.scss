@@ -1,0 +1,65 @@
+@import '../App.scss';
+.typography {
+    font-style: normal;
+    font-weight: normal;
+    color: $default_black;
+    font-family: $muller;
+    line-height: 136.5%;
+
+   
+    &-sp1 {
+        font-size: 32px;
+    }
+    &-sp2 {
+        font-size: 28px;
+    }
+
+    &-p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    &-h1 {
+        font-size: 24px;
+    }
+    &-h2 {
+        font-size: 22px;
+    }
+    &-h3 {
+        font-size: 20px;
+    }
+    &-h4 {
+        font-size: 18px;
+    }
+    &-h5 {
+        font-size: 16px;
+    }
+    &-h6 {
+        font-size: 14px;
+    }
+    &-subtitle {
+        font-size: 18px;
+    }
+    &-body {
+        font-size: 14px;
+    }
+    &-small {
+        font-size: 12px;
+    }
+    &-additional {
+        font-size: 11px;
+    }
+
+    &.black {
+        color: $default_black;
+    }
+    &.gray {
+        color: $default_gray;
+    }
+    &.white {
+        color: $white;
+    }
+
+    &.bold {
+        font-weight: 500;
+    }
+}

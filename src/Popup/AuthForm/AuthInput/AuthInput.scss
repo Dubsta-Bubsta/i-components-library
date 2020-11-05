@@ -1,0 +1,29 @@
+@import '../../../App.scss';
+
+.input-block {
+	border: 1px solid $dark_gray;
+	box-sizing: border-box;
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 0;
+	box-sizing: border-box;
+	margin-bottom: 24px;
+
+	& .input-block__icon {
+		padding: 4px 14px;
+		box-sizing: border-box;
+		border-right: 1px solid $dark_gray;
+	}
+
+	& .input-block__input {
+		padding: 4px 22px;
+		color: $dark_gray;
+		border: none;
+		width: 100%;
+		font-family: $open_sans;
+		font-size: 16px;
+		line-height: 23px;
+	}
+}

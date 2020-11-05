@@ -1,0 +1,64 @@
+@import '../App.scss';
+
+.selector-block {
+	position: relative;
+	margin: 0 15px;
+	&.blue {
+		& .selector__active {
+			color: $main_blue;
+			& svg path {
+				fill: $main_blue;
+			}
+		}
+	}
+	&.white {
+		& .selector__active {
+			color: $white;
+			& svg path {
+				fill: $white;
+			}
+		}
+	}
+
+	& .selector__active {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		& svg {
+			margin-left: 10px;
+		}	
+		cursor: pointer;
+	}
+
+	& .selector__list {
+		position: absolute;
+		width: 100%;
+		flex-direction: column;
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+		background: $white;
+		top: 20px;
+		width: 100%;
+		display: none;
+		width: auto;
+		padding: 6px 0;
+		min-width: 100px;
+		&.active {
+			display: flex;
+		}
+
+		& .list__element {
+			padding: 15px 20px;
+			box-sizing: border-box;
+			cursor: pointer;
+			width: 100%;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&:hover, &.active {
+				background: $light_gray;
+			}
+		}
+		
+	}
+	
+}

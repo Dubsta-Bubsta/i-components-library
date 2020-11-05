@@ -1,0 +1,67 @@
+@import '../../../App.scss';
+
+.checkbox__holder {
+    display: flex;
+    justify-content: center;
+}
+
+.checkbox__content {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    & .checkbox__text {
+        font-family: $open_sans;
+        font-size: 16px;
+        line-height: 22px;
+        color: $default_black;
+        margin-top: -2px;
+    }
+    & .checkbox__input {
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:checked ~ .checkbox__mark {
+            border-radius: 3px;
+            
+            &:after {
+                display: block;
+            }
+        }
+    }
+    & .checkbox__mark {
+        border-radius: 2px;
+        border: 1px solid $dark_gray;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 19px;
+        width: 19px;
+        background-color: #fff;
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 5px;
+            top: 1.5px;
+            width: 5px;
+            height: 10px;
+            border: solid $dark_gray;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}

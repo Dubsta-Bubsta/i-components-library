@@ -1,0 +1,118 @@
+@import '../App.scss';
+
+.default-button {
+	font-family: $muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 14px;
+	border-radius: 0px;
+	box-sizing: border-box;
+	border: 1px solid $white;
+	background: #fff;
+	cursor: pointer;
+	white-space: nowrap;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&.white {
+		&.outlined {
+			color: $white;
+			border-color: $white;
+			background: transparent;
+		}
+
+		&.filled {
+			color: $black;
+			border-color: $white;
+			background: $white;
+		}
+		&:focus {
+			border-color: $white;
+		}
+	}
+
+	&.blue {
+		&.outlined {
+			color: $main_blue;
+			border-color: $main_blue;
+			background: transparent;
+		}
+
+		&.filled {
+			color: $white;
+			border-color: $main_blue;
+			background: $main_blue;
+		}
+		&:focus {
+			border-color: $main_blue;
+		}
+	}
+
+	&.green {
+		&.filled {
+			color: $white;
+			border-color: $green;
+			background: $green;
+		}
+	}
+
+	&.coral-blue {
+		&.filled {
+			color: $white;
+			border-color: $light_blue;
+			background: $light_blue;
+		}
+	}
+
+
+	&.border {
+		&-small {
+			border-radius: 2px;
+		}
+		&-default {
+			border-radius: 4px;
+		}
+	}
+
+	&.size {
+		&-small {
+			padding: 9px 13px 8px 13px;
+			min-width: 90px;
+			font-weight: bold;
+		}
+		&-default {
+			min-width: 105px;
+			padding: 12px 8px;
+		}
+	}
+
+
+	&.bordered {
+		border-radius: 4px;
+	}
+
+	& .button__icon {
+		display: block;
+	}
+
+	&.icon {
+		&-left {
+			display: flex;
+			& .button__icon {
+				margin-right: 11px;
+			}
+		}
+		&-right {
+			display: flex;
+			flex-direction: row-reverse;
+			& .button__icon {
+				margin-right: 0px;
+				margin-left: 11px;
+			}
+		}
+	}
+	
+}
