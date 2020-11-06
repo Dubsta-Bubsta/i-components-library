@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import classNames from 'classnames'
 import './Button.scss'
 
+
 type PropsType = {
 	children: React.ReactNode,
 	onClick?: () => void
@@ -17,6 +18,7 @@ type PropsType = {
 	Icon?: any
 	iconPosition?: "left" | "right"
 }
+
 
 
 

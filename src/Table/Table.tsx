@@ -1,16 +1,12 @@
 import React from 'react'
-import './Table.scss'
-
-type PropsType = {
-	children: any
-}
+import styled from 'styled-components'
 
 
-const Table = ({ ...props }: PropsType) => {
-	return (
-		<table className="custom-table">
-			{props.children}
-		</table>
-	)
-}
-export default Table;
+const StyledTable = styled.table`
+	width: 100%;
+	display: table;
+	border-spacing: 0;
+	border-collapse: collapse;
+`;
+
+export default StyledTable;

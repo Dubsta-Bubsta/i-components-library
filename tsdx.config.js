@@ -3,8 +3,10 @@ const sass = require('rollup-plugin-sass');
 
 module.exports = {
   rollup(config, options) {
-    config.plugins = [image({ incude: ['**/*.svg'] }), ...config.plugins];
-    config.plugins = [sass(), ...config.plugins];
+    config.plugins = [
+      image({ include: ['**/*.svg'] }),
+      sass(),
+      ...config.plugins];
 
     return config;
   },

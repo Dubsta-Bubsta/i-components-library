@@ -1,15 +1,10 @@
 import React from 'react'
-import './TableHead.scss'
+import styled from 'styled-components'
 
-type PropsType = {
-	children: any	
-}
+const StyledTableHead = styled.thead`
+	width: 100%;
+    display: table-header-group;
+`;
 
-const TableHead = ({ ...props }: PropsType) => {
-	return (
-		<thead className="custom-table-head">
-			{props.children}
-		</thead>
-	)
-}
-export default TableHead;
+
+export default StyledTableHead;

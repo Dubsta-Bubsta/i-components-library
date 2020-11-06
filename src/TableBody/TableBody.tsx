@@ -1,15 +1,9 @@
-import React from 'react'
-import './TableBody.scss'
+import styled from 'styled-components'
 
-type PropsType = {
-	children: any	
-}
 
-const TableBody = ({ ...props }: PropsType) => {
-	return (
-		<tbody className="custom-table-body">
-			{props.children}
-		</tbody>
-	)
-}
-export default TableBody;
+const StyledTableBody = styled.tbody`
+	width: 100%;
+	display: table-row-group;
+`;
+
+export default StyledTableBody;

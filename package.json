@@ -76,7 +76,11 @@
     "tslib": "^2.0.0",
     "typescript": "^3.9.6"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jss": "^10.4.0",
+    "rollup-plugin-postcss": "^3.1.8",
+    "styled-components": "^5.2.1"
+  },
   "description": "# Installation",
   "bugs": {
     "url": "https://github.com/Dubsta-Bubsta/itmo-components-library/issues"

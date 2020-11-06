@@ -1,17 +1,13 @@
 import React from 'react'
-import './TableRow.scss'
+import styled from 'styled-components'
 
 
-type PropsType = {
-	children: any	
-}
+const StyledTableHead = styled.tr`
+	color: inherit;
+	display: table-row;
+	outline: 0;
+	vertical-align: middle;
+`;
 
-const TableRow = ({ ...props }: PropsType) => {
-	return (
-		<tr className="custom-table-row">
-			{props.children}
-		</tr>
-	)
-}
 
-export default TableRow;
+export default StyledTableHead;
