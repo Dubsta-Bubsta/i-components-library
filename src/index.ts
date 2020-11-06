@@ -5,14 +5,17 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactChild;
 }
 
+export { colors, fonts } from './styles/common.js';
+
+
 export { default as Table } from './Table';
 export { default as TableBody } from './TableBody';
 export { default as TableCell } from './TableCell';
 export { default as TableHead } from './TableHead';
 export { default as TableRow } from './TableRow';
 
-export { default as Box } from './TableRow';
-export { default as Flex } from './TableRow';
+export { default as Box } from './Box';
+export { default as Flex } from './Flex';
 
 export { default as Typography } from './Typography';
 
@@ -30,5 +33,6 @@ export { default as Button } from './Button';
 export { default as IconButton } from './IconButton';
 
 export { default as HorizontalSelectors } from './HorizontalSelectors';
+export type { SelectorType as HorizontalSelectorType } from './HorizontalSelectors';
 
 export { default as Tooltip } from './Tooltip';

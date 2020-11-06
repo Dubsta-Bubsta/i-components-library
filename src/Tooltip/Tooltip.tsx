@@ -1,39 +1,69 @@
 import React, { FC, useState, useEffect, useRef } from 'react';
-import './Tooltip.scss';
-import { TooltipTriangle } from './TooltipTriangle'
-
-import { TooltipBulb, TooltipWarning } from './assets/svg'
+import { TooltipBulb, TooltipWarning, TooltipTriangle } from './assets/svg'
 import Typography from '../Typography';
+import { createUseStyles } from 'react-jss'
 
 type PropsType = {
-    type?: "success" | "error" | "default"
+    iconType?: "success" | "error"
+    color?: string
+    themeColor?: string
     title?: string
     description?: string
 }
 
-const Tooltip: FC<PropsType> = ({ type = "default", title, description }) => {
+const useStyles = createUseStyles({
+    root: (props) => ({
+        maxWidth: 300,
+        borderRadius: 5,
+        position: 'relative', 
+        padding: '14px 20px 12px 20px',
+        background: props.themeColor,
+        boxShadow:  `2px 2px 5px ${props.themeColor}`
+    }),
+    tooltipTriangle: (props) => ({
+        position: 'absolute',
+        left: 0,
+        top: -15,
+        "& svg path": {
+            fill: props.themeColor
+        }
+    }),
+    content: {
+        display: 'flex',
+        alignItems: 'flex-start'
+    },
+    logo: {
+        marginRight: 18,
+    },
+    info: {
+        marginBottom: 5
+    }
+})
+
+const Tooltip: FC<PropsType> = ({ title, description, iconType = "", color = "#fff", themeColor = "#C4C4C4" }) => {
+    const styles = useStyles({ themeColor })
 
     let Icon = TooltipBulb
-    if (type === "error") {
+    if (iconType === "error") {
         Icon = TooltipWarning
     }
 
-	return (
-        <div className={`custom-tooltip ${type}`}>
-            <div className="tooltip__triangle">
+    return (
+        <div className={styles.root}>
+            <div className={styles.tooltipTriangle}>
                 <TooltipTriangle />
             </div>
-            <div className="tooltip__content">
-                <div className="content__logo">
+            <div className={styles.content}>
+                <div className={styles.logo}>
                     <Icon />
                 </div>
-                <div className="tooltip__info">
-                    <Typography variant="p" theme="white" bold={true}>{title}</Typography>
-                    <Typography variant="small" theme="white">{description}</Typography>
+                <div className={styles.info}>
+                    <Typography variant="p" bold={true} fontSize={14} color={color}>{title}</Typography>
+                    <Typography variant="small" color={color}>{description}</Typography>
                 </div>
             </div>
-		</div>
-	)
+        </div>
+    )
 }
 
 export default Tooltip;

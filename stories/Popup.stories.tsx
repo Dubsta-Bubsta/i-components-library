@@ -1,18 +1,38 @@
 import React, { useState } from 'react';
-import { Popup, AuthPopup } from '../src'
+import { Popup, AuthPopup, Button } from '../src'
 import AuthForm from '../src/Popup/AuthForm/AuthForm'
 import { storiesOf } from '@storybook/react'
 
 export default {
     title: 'Popup',
-   
+    argTypes: {
+        children: {
+            required: true,
+            defaultValue: { summary: '' },
+            description: "Popup content"
+        },
+        open: {
+            required: true,
+            defaultValue: { summary: false },
+            description: "Popup visibility"
+        },
+        setOpen: {
+            required: true,
+            description: "Set popup visibility function"
+        },
+    },
+    args: {
+        children: '',
+        open: false,
+        setOpen: "() => void"
+    },
 };
 
-export const DefaultPopup = (props) => {
-    const [open, setOpen] = useState(false)
+export const DefaultPopupExample = (props) => {
+    const [open, setOpen] = useState(props.open)
     return (
         <>
-            <button onClick={() => { setOpen(true) }}>OPEN</button>
+            <Button onClick={() => { setOpen(true) }} theme="blue">OPEN</Button>
             <Popup open={open} setOpen={setOpen}>
                 <div style={{ padding: 20 }}> Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация </div>
             </Popup>
@@ -21,16 +41,11 @@ export const DefaultPopup = (props) => {
 };
 
 export const AuthPopupExample = (props) => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(props.open)
     return (
         <>
-            <button onClick={() => { setOpen(true) }}>OPEN</button>
+            <Button onClick={() => { setOpen(true) }} theme="blue">OPEN</Button>
             <AuthForm open={open} setOpen={setOpen}/>
         </>
     );
 };
-
-
-storiesOf('Popup', module)
-    .add('default', AuthPopupExample)
-   

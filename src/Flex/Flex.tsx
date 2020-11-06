@@ -1,26 +1,27 @@
-import React, { FC } from 'react'
-import './Flex.scss'
+import React from 'react'
+import styled, { css } from 'styled-components'
 
-type PropsType = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
-	jusifyContent?: "sb" | "sa" | "center" | "stretch" | "start" | "end"
-	alignItems?: "center" | "stretch" | "start" | "end"
-	flexDirection?: "row" | "row-rev" | "column" | "column-rev"
+
+
+type FlexProps = {
+	alignItems?: string
+	justifyContent?: string
+	alignContent?: string
+	justifyItems?: string
+	flexDirection?: string
 }
 
+const Flex = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between; 
+	${(props: FlexProps) => css`
+		flex-direction: ${props.flexDirection ?? "row"} ;
+		align-items: ${props.alignItems ?? "center"} ;
+		justify-content: ${props.justifyContent ?? "space-between"} ;
+		align-content: ${props.alignContent} ;
+		justify-items: ${props.justifyItems} ;
+	`}
+`;
 
-
-const Flex: FC<PropsType> = ({ className = "", jusifyContent = 'sb', flexDirection = 'row', alignItems = 'center', ...props }) => (
-	<div
-		className={`
-		${className} 
-			custom-flex 
-			justify-content-${jusifyContent} 
-			align-items-${alignItems} 
-			flex-direction-${flexDirection}
-		`}
-		{...props}
-	>
-		{props.children}
-	</div>
-)
 export default Flex;

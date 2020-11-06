@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography from '../Typography'
 import styled from 'styled-components'
-
+import { colors } from '../index'
 
 type PropsType = {
 	children: React.ReactNode	
@@ -14,7 +14,7 @@ const defaultStyle = `
     padding: 16px;
     font-size: 0.875rem;
     text-align: left;
-    border-bottom: 1px solid #C4C4C4;
+    border-bottom: 1px solid ${colors.defaultGray};
 	vertical-align: inherit;
 `;
 
