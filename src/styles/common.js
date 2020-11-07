@@ -14,7 +14,7 @@ export const colors = {
 	defaultGray: '#C4C4C4',
 	lightGray: '#DFE0EB',
 
-	white: '#ffffff',
+	white: '#FFFFFF',
 	black: '#000000',
 }
 

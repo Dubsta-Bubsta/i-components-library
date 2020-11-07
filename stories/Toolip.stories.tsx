@@ -4,11 +4,6 @@ import { Tooltip, colors } from '../src'
 export default {
     title: 'Tooltip',
     argTypes: {
-        children: {
-            required: true,
-            defaultValue: { summary: '' },
-            description: "Button icon (Svg or image as Component)"
-        },
         iconType: {
             control: {
                 type: 'select',
@@ -38,7 +33,6 @@ export default {
         },
     },
     args: {
-        children: '',
         iconType: 'success',
         title: "Lorem Ipsum - это текст-рыба",
         description: "Lorem Ipsum - это текст-рыба, часто используемый в печати и вэб-дизайне.",

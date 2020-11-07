@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import './SearchInput.scss'
 import { CloseIcon, SearchIcon } from './assets/svg'
-
+import { createUseStyles } from 'react-jss'
+import { colors, fonts } from '../styles/common.js'
 
 type PropsType = {
 	theme?: "white" | "gray"
@@ -10,28 +10,82 @@ type PropsType = {
 	placeholder?: string
 	collapsed?: boolean
 	withReset?: boolean
+
+	searchText: string
+	setSearchText: (searchText: string) => void
 }
 
+const useStyles = createUseStyles({
+    root: {
+		flex: 1,
+		margin: '0 25px',
+		display: 'flex',
+		alignItems: 'center',
+		height: 40,	
+		"&.collapsed": {
+			width: '70%'
+		},
+		"&.white": {
+			background: colors.white,
+			"& .input": {
+				color: colors.defaultBlack,
+			}
+		},
+		"&.gray": {
+			background: colors.lightGray,
+			"& .input": {
+				color: colors.darkGray,
+			}
+		},
+		"&.border-default": {
+			borderRadius: '4px'
+		},
+		"&.border-small": {
+			borderRadius: '2px'
+		},
+	},
+	input: {
+		fontFamily: fonts.openSans,
+		border: 'none',
+		width: '100%',
+		padding: '11px 29px 10px 20px',
+		background: 'transparent',
+	},
+	icon: {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		padding: '0 15px',
+		height: 40,
+		
+		"&.search": {
+			borderLeft: `1px solid ${colors.defaultGray}`,
+		}
+	}
 
-const SearchInput = ({ theme="white", borderRadius="default", placeholder = "", collapsed = false, withReset = true }: PropsType) => {
-	const [searchText, setSearchText] = useState('')
+    
+})
+
+
+const SearchInput = ({ searchText, setSearchText, theme="white", borderRadius="default", placeholder = "", collapsed = false, withReset = true }: PropsType) => {
+    const styles = useStyles()
 
 	return (
-		<div className={classNames(`header__search-block ${theme} border-${borderRadius}`, {'collapsed': collapsed})}>
+		<div className={classNames(`${styles.root} ${theme} border-${borderRadius}`, {'collapsed': collapsed})}>
 			
 			<input 
 				placeholder={placeholder}
-				className="search-block__input" 
+				className={`${styles.input} input`} 
 				value={searchText} 
 				onChange={(e) => setSearchText(e.target.value)}
 			/>
 			
 
-			{ withReset && <button className="search-block__icon close" onClick={() => { setSearchText("") }}>
+			{ withReset && <button className={`${styles.icon} icon close`} onClick={() => { setSearchText("") }}>
 				<CloseIcon />
 			</button> }
 
-			<button className="search-block__icon search">
+			<button className={`${styles.icon} icon search`}>
 				<SearchIcon />
 			</button>
 

@@ -4,8 +4,11 @@ import { createUseStyles } from 'react-jss'
 
 type PropsType = {
     selectors: Array<SelectorType>
-    activeSelector: SelectorType
-    setActiveSelector: (selector: SelectorType) => void
+    activeSelectorId: number | string
+    setActiveSelector: (selectorId: number | string) => void
+
+    style?: any
+    selectorStyle?: any
 }
 
 export type SelectorType = {
@@ -28,11 +31,10 @@ const useStyles = createUseStyles({
 
     selectorElement: {
         width: '100%',
-        padding: '16px 10px 15px 10px',
+        padding: '16px 10px 17px 10px',
         border: 'none',
         transition: '0s',
         boxSizing: 'border-box',
-        paddingBottom: '17px',
         "& .selector-border": {
             position: 'absolute',
             bottom: 0,
@@ -53,25 +55,26 @@ const useStyles = createUseStyles({
     
 })
 
-const Selectors = ({ selectors, activeSelector, setActiveSelector }: PropsType) => {
+const Selectors = ({ selectors, activeSelectorId, setActiveSelector, style = {}, selectorStyle = {} }: PropsType) => {
     const styles = useStyles()
 
     return (
-        <div className={styles.root}>
+        <div className={styles.root} style={style}>
             {selectors.map(selector => (
                 <button
                     key={selector.id}
-                    onClick={() => setActiveSelector(selector)}
-                    className={`${styles.selectorElement} ${activeSelector.id === selector.id ? "active" : ""}`}
+                    onClick={() => setActiveSelector(selector.id)}
+                    className={`${styles.selectorElement} ${activeSelectorId === selector.id ? "active" : ""}`}
                     data-color={selector.borderColor}
                     data-id={`selector-${selector.id}`}
+                    style={selectorStyle}
                 >
                     <Typography
                         variant="p"
                         fontFamily="Muller"
                         fontSize={14}
-                        bold={activeSelector.id === selector.id}
-                        theme={activeSelector.id === selector.id ? "black" : "gray"}
+                        bold={activeSelectorId === selector.id}
+                        theme={activeSelectorId === selector.id ? "black" : "gray"}
                     >
                         {selector.label}
                     </Typography>

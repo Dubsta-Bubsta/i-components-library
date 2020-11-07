@@ -47,15 +47,19 @@ export default {
             },
             defaultValue: { summary: 'Muller' },
         },
+        fontSize: { },
+        lineHeight: { }
     },
     args: {
         children: 'Текст',
         variant: "p",
         theme: 'black',
         bold: false,
-        fontFamily: fonts.muller
+        fontFamily: fonts.muller,
     },
 };
-export const TypographyExample = (props) => (
-    <Typography {...props} />
-)
+export const TypographyExample = (props) => {
+    return (
+        <Typography {...props} />
+    )
+}

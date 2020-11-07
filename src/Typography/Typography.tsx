@@ -16,7 +16,7 @@ type PropsType = React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, H
 	padding?: number | string
 }
 
-const Typography: FC<PropsType> = ({ variant = "p", className = "", theme = "black", bold = false, fontSize = 14, lineHeight, color, fontFamily = "Muller", padding, margin, ...props }) => {
+const Typography: FC<PropsType> = ({ variant = "p", className = "", theme = "black", bold = false, fontSize, lineHeight, color, fontFamily = "Muller", padding, margin, ...props }) => {
 	let Component = "p" as any
 	if (variant === "subtitle" || variant === "body" || variant === "small" || variant === "additional" || variant === "sp1" || variant === "sp2") {
 		Component = "p"
@@ -31,47 +31,51 @@ const Typography: FC<PropsType> = ({ variant = "p", className = "", theme = "bla
 		font-family: ${fonts.muller};
 		line-height: 136.5%;
 		margin: 0;
-		&-sp1 {
-			font-size: 32px;
+
+		&.typography {
+			&-sp1 {
+				font-size: 32px;
+			}
+			&-sp2 {
+				font-size: 28px;
+			}
+		
+			&-p {
+				font-size: 14px;
+				line-height: 16px;
+			}
+			&-h1 {
+				font-size: 24px;
+			}
+			&-h2 {
+				font-size: 22px;
+			}
+			&-h3 {
+				font-size: 20px;
+			}
+			&-h4 {
+				font-size: 18px;
+			}
+			&-h5 {
+				font-size: 16px;
+			}
+			&-h6 {
+				font-size: 14px;
+			}
+			&-subtitle {
+				font-size: 18px;
+			}
+			&-body {
+				font-size: 14px;
+			}
+			&-small {
+				font-size: 12px;
+			}
+			&-additional {
+				font-size: 11px;
+			}
 		}
-		&-sp2 {
-			font-size: 28px;
-		}
-	
-		&-p {
-			font-size: 14px;
-			line-height: 16px;
-		}
-		&-h1 {
-			font-size: 24px;
-		}
-		&-h2 {
-			font-size: 22px;
-		}
-		&-h3 {
-			font-size: 20px;
-		}
-		&-h4 {
-			font-size: 18px;
-		}
-		&-h5 {
-			font-size: 16px;
-		}
-		&-h6 {
-			font-size: 14px;
-		}
-		&-subtitle {
-			font-size: 18px;
-		}
-		&-body {
-			font-size: 14px;
-		}
-		&-small {
-			font-size: 12px;
-		}
-		&-additional {
-			font-size: 11px;
-		}
+		
 	
 		&.black {
 			color: ${colors.defaultBlack};
