@@ -1,6 +1,4 @@
-# ITMO components library
-
 # Installation
 
-`npm i itmo-components-library --save`
+`npm i i-components-library --save`
  
