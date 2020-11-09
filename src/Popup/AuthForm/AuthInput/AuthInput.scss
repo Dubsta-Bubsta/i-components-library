@@ -1,7 +1,7 @@
 @import '../../../App.scss';
 
 .input-block {
-	border: 1px solid $dark_gray;
+	border: 1px solid $default_gray;
 	box-sizing: border-box;
 	border-radius: 2px;
 	display: flex;
@@ -14,7 +14,7 @@
 	& .input-block__icon {
 		padding: 4px 14px;
 		box-sizing: border-box;
-		border-right: 1px solid $dark_gray;
+		border-right: 1px solid $default_gray;
 	}
 
 	& .input-block__input {
@@ -26,4 +26,31 @@
 		font-size: 16px;
 		line-height: 23px;
 	}
+}
+
+@media screen and (max-width: 768px) {
+	.input-block {
+		border: 1px solid $default_gray;
+		box-sizing: border-box;
+		border-radius: 2px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 8px 0;
+		box-sizing: border-box;
+		margin-bottom: 16px;
+	
+		& .input-block__icon {
+			padding: 2px 14px;
+			box-sizing: border-box;
+			border-right: 1px solid $default_gray;
+		}
+	
+		& .input-block__input {
+			padding: 2px 14px;
+			font-size: 13px;
+			line-height: 16px;
+		}
+	}
+	
 }

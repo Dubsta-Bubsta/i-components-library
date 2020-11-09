@@ -82,15 +82,14 @@ const useStyles = createUseStyles({
 		zIndex: 3,
 	},
 	popupContent: {
+		width: 'auto',
 		maxHeight: 'calc(100% - 64px)',
 		boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',		
-		width: 'fit-content',
 		zIndex: 5,
 		position: 'absolute',
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		background: '#fff',
 
 		"&.xs": {
 			maxWidth: 444

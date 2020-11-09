@@ -4,17 +4,9 @@ import { FormTitle, AuthPhaseEnum } from './AuthForm'
 import Button from '../../Button'
 import AuthInput from './AuthInput/AuthInput'
 
-import lockIcon from './assets/lock-icon.svg'
 import Checkbox from './Checkbox/Checkbox'
 
-import googleIcon from './assets/google-icon.svg'
-import ieIcon from './assets/ie-icon.svg'
-import mozilaIcon from './assets/mozila-icon.svg'
-import safariIcon from './assets/safari-icon.svg'
-import horizontalLogo from './assets/logo-horizontal-blue.svg'
-
-import phoneIcon from './assets/phone-icon.svg'
-import userIcon from './assets/user-icon.svg'
+import { UserIcon, LockIcon, PhoneIcon, GoogleIcon, IEIcon, MozilaIcon, SafariIcon, HorizontalLogo, SSOLogo } from './assets/svg'
 
 
 type PropsType = {
@@ -27,32 +19,48 @@ const LoginForm = ({ setAuthPhase }: PropsType) => {
 			<div className="content__form">
 				<FormTitle title="Вход в систему" />
 
-				<AuthInput icon={userIcon} placeholder="Имя пользователя" />
-				<AuthInput icon={lockIcon} placeholder="Пароль" />
+				<AuthInput Icon={UserIcon} placeholder="Имя пользователя" />
+				<AuthInput Icon={LockIcon} placeholder="Пароль" />
 
 				<div className="checkbox__block">
 					<Checkbox label={"Поддерживать сессию?"} />
 				</div>
 
 				<div className="form__buttons">
-					<Button variant="filled" theme="blue" padding={'15px 60px'} borderRadius={25}>ВОЙТИ</Button>
+					<Button variant="filled" className="buttons__login" theme="blue" padding={'15px 60px'} borderRadius={25}>ВОЙТИ</Button>
 					<p className="form__service-link">Забыли пароль?</p>
 				</div>
 				<button className="form__service-link" onClick={() => { setAuthPhase(AuthPhaseEnum.register) }}>Регистрация</button>
 
 			</div>
+			<button className="sso-auth auth">
+				<p className="auth__title">Вход через ССО</p>
+				<div className="auth__logo">
+					<SSOLogo />
+				</div>
+			</button>
 
 			<div className="content__info">
-				<img src={horizontalLogo} alt="itmo-horizontal-logo" />
+				<div className="info__logo">
+					<HorizontalLogo />
+				</div>
 				<div className="info__contact-us">
-					<img src={phoneIcon} alt="phone-icon" />
+					<PhoneIcon />
 					<p className="contact-us__text">Связаться с командой поддержки</p>
 				</div>
 				<div className="info__socials">
-					<img src={googleIcon} className="social__item" alt="social-item" />
-					<img src={ieIcon} className="social__item" alt="social-item" />
-					<img src={mozilaIcon} className="social__item" alt="social-item" />
-					<img src={safariIcon} className="social__item" alt="social-item" />
+					<div className="social__item">
+						<GoogleIcon />
+					</div>
+					<div className="social__item">
+						<IEIcon />
+					</div>
+					<div className="social__item">
+						<MozilaIcon />
+					</div>
+					<div className="social__item">
+						<SafariIcon />
+					</div>
 				</div>
 			</div>
 		</div>

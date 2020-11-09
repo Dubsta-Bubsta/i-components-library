@@ -1,6 +1,6 @@
 {
-  "name": "itmo-components-library",
-  "version": "0.0.8",
+  "name": "i-components-library",
+  "version": "0.0.1",
   "license": "MIT",
   "engines": {
     "node": ">=12.18.2"
@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dubsta-Bubsta/itmo-components-library.git"
+    "url": "git+https://github.com/Dubsta-Bubsta/i-components-library.git"
   },
   "bug": {
-    "url": "https://github.com/Dubsta-Bubsta/itmo-components-library/issues"
+    "url": "https://github.com/Dubsta-Bubsta/i-components-library/issues"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -43,7 +43,7 @@
     "trailingComma": "es5"
   },
   "author": "dubsta-bubsta",
-  "module": "dist/itmo-components.esm.js",
+  "module": "dist/i-components.esm.js",
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@material-ui/core": "^4.11.0",
@@ -84,9 +84,9 @@
   },
   "description": "# Installation",
   "bugs": {
-    "url": "https://github.com/Dubsta-Bubsta/itmo-components-library/issues"
+    "url": "https://github.com/Dubsta-Bubsta/i-components-library/issues"
   },
-  "homepage": "https://github.com/Dubsta-Bubsta/itmo-components-library#readme",
+  "homepage": "https://github.com/Dubsta-Bubsta/i-components-library#readme",
   "directories": {
     "test": "test"
   },

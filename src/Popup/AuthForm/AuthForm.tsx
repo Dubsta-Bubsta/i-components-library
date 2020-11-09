@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './AuthForm.scss'
-import defaultLogo from './assets/logo-vertical-white.svg'
+import { VerticalLogo } from './assets/svg'
 
 
 import LoginForm from './LoginForm'
@@ -33,7 +33,7 @@ const AuthForm = ({ open, setOpen }: PropsType) => {
 		<Popup open={open} setOpen={setOpen} maxWidth={MaxWidthEnum.md}>
 			<div className="modal__body">
 				<div className="body__preview">
-					<img src={defaultLogo} alt="itmo-logo" />
+					<VerticalLogo />
 				</div>
 				{renderComponent}
 			</div>

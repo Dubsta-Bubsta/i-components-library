@@ -4,9 +4,7 @@ import { FormTitle, AuthPhaseEnum } from './AuthForm'
 import Button from '../../Button'
 import AuthInput from './AuthInput/AuthInput'
 
-import userIcon from './assets/user-icon.svg'
-import emailIcon from './assets/email-icon.svg'
-import lockIcon from './assets/lock-icon.svg'
+import { UserIcon, EmailIcon, LockIcon } from './assets/svg'
 
 type PropsType = {
 	setAuthPhase: (authPhase: AuthPhaseEnum) => void
@@ -20,14 +18,14 @@ const RegisterForm = ({ setAuthPhase }: PropsType) => {
 			<div className="content__form">
 				<FormTitle title="Регистрация" />
 
-				<AuthInput icon={userIcon} placeholder="Имя пользователя" />
-				<AuthInput icon={emailIcon} placeholder="Электронная почта" />
-				<AuthInput icon={lockIcon} placeholder="Пароль" />
-				<AuthInput icon={lockIcon} placeholder="Повторите пароль" />
+				<AuthInput Icon={UserIcon} placeholder="Имя пользователя" />
+				<AuthInput Icon={EmailIcon} placeholder="Электронная почта" />
+				<AuthInput Icon={LockIcon} placeholder="Пароль" />
+				<AuthInput Icon={LockIcon} placeholder="Повторите пароль" />
 
 
 				<div className="form__buttons">
-					<Button variant="filled" theme="blue" padding={'15px 60px'} borderRadius={25}>Зарегистрироваться</Button>
+					<Button variant="filled" className="buttons__login" theme="blue" padding={'15px 60px'} borderRadius={25}>Зарегистрироваться</Button>
 				</div>
 				<button className="form__service-link" onClick={() => { setAuthPhase(AuthPhaseEnum.login) }}>Войти</button>
 

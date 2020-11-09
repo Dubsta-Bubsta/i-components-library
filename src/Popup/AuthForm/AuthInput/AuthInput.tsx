@@ -2,15 +2,16 @@ import React from 'react'
 import './AuthInput.scss'
 
 type PropsType = {
-	icon?: string
+	Icon?: any
 	placeholder?: string
 }
 
-const AuthInput = ({ icon, placeholder }: PropsType) => {
+const AuthInput = ({ Icon, placeholder }: PropsType) => {
 	return (
 		<div className="input-block">
 			<div className="input-block__icon">
-				<img src={icon} alt="input-icon"/>
+
+				<Icon />
 			</div>
 			<input className="input-block__input" placeholder={placeholder}/>
 		</div>

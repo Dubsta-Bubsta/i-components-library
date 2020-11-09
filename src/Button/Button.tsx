@@ -5,6 +5,8 @@ import './Button.scss'
 
 type PropsType = {
 	children: React.ReactNode,
+	className?: string
+
 	onClick?: () => void
 	bordered?: boolean
 	theme?: "blue" | "white"
@@ -23,7 +25,7 @@ type PropsType = {
 
 
 
-const Button: FC<PropsType> = ({ children, onClick = () => {}, bordered = false, theme = "white", themeColor="", size = "default", variant = "filled", borderRadius = "default", margin, padding, Icon, iconPosition = "left" }) => {
+const Button: FC<PropsType> = ({ children, className, onClick = () => {}, bordered = false, theme = "white", themeColor="", size = "default", variant = "filled", borderRadius = "default", margin, padding, Icon, iconPosition = "left" }) => {
 	let styleObject = {}
 	if (themeColor) {
 		if (variant === "filled") {
@@ -46,7 +48,7 @@ const Button: FC<PropsType> = ({ children, onClick = () => {}, bordered = false,
 	
 		<button 
 			onClick={onClick}
-			className={classNames(`default-button ${theme} ${variant} border-${borderRadius} size-${size}`, { 
+			className={classNames(`default-button ${theme} ${variant} ${className} border-${borderRadius} size-${size}`, { 
 				"bordered": bordered,
 				[`icon-${iconPosition}`]: Icon && iconPosition 
 			})}
